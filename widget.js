@@ -1,7 +1,7 @@
 (function() {
   // Listahan ng iyong 6 na promo videos
   const promoVideos = [
-    "./promo-ads-1.mp4",
+    "./GitVoice Neon Healthcare Animation.gif.mp4",
     "./promo-ads-2.mp4",
     "./promo-ads-3.mp4",
     "./promo-ads-4.mp4",
