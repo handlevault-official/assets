@@ -1,26 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HandleVault Official Assets</title>
-  <style>
-    body {
-      background-color: #0b0f19;
-      color: #e8eefc;
-      font-family: system-ui, sans-serif;
-      text-align: center;
-      padding: 50px 20px;
-    }
-    h1 { color: #2dd4bf; }
-    p { color: #93a3c0; }
-    a { color: #2dd4bf; text-decoration: none; font-weight: bold; }
-    a:hover { text-decoration: underline; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandleVault Official — App Previews & Verification Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+              }
+            }
+          }
+        }
+      }
+    </script>
 </head>
-<body>
-  <h1>🛡️ HandleVault Official Assets</h1>
-  <p>Centralized hosting hub for the HandleVault 5-App Suite widgets and promo media.</p>
-  <p>Visit our official store: <a href="https://handlevault.gumroad.com" target="_blank">Gumroad Storefront</a></p>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between antialiased p-4 sm:p-6">
+
+    <!-- Main Container -->
+    <main class="max-w-2xl w-full mx-auto py-8">
+        
+        <!-- 1. UNA: Featured App Video Demos / Promo Ads Showcase -->
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-4 px-1">
+                <h1 class="text-sm font-bold uppercase tracking-wider text-teal-400">
+                    🎬 5-App Suite &amp; Asset Live Previews
+                </h1>
+                <span class="text-xs text-slate-400 font-medium">Instant Delivery</span>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                
+                <!-- App 01 Video Preview Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition flex flex-col justify-between shadow-xl">
+                    <div class="w-full h-40 bg-slate-950 relative border-b border-slate-800">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="videos/promo-ads-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h2 class="font-bold text-white text-sm">App 01 — Core Utility</h2>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded border border-teal-500/20">$5 – $6</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Fast, lightweight productivity tool built for rapid daily workflows.</p>
+                        <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" rel="noopener noreferrer" class="text-xs text-teal-400 font-semibold hover:underline">
+                            Get on Store &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- App 02 Video Preview Card -->
+                <div class="bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-teal-500/50 transition flex flex-col justify-between shadow-xl">
+                    <div class="w-full h-40 bg-slate-950 relative border-b border-slate-800">
+                        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                            <source src="videos/promo-ads-1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="p-4">
+                        <div class="flex justify-between items-start mb-2">
+                            <h2 class="font-bold text-white text-sm">App 02 — Dev Helper</h2>
+                            <span class="text-xs font-semibold bg-teal-500/10 text-teal-400 px-2 py-0.5 rounded border border-teal-500/20">$5 – $6</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mb-3">Essential companion utility tailored for indie developers.</p>
+                        <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" rel="noopener noreferrer" class="text-xs text-teal-400 font-semibold hover:underline">
+                            Get on Store &rarr;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2. PANGALAYA: Storefronts & Repo Verification Links Hub -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 text-center shadow-2xl">
+            <div class="text-teal-400 text-3xl mb-2">🛡️</div>
+            <h2 class="text-xl font-bold text-teal-400 mb-1">HandleVault Official Hub</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mb-6">Secure storefronts and repository integrity verification.</p>
+            
+            <div class="space-y-3 max-w-md mx-auto">
+                <!-- Ko-fi Storefront -->
+                <a href="https://ko-fi.com/handlevaultofficial" target="_blank" rel="noopener noreferrer" class="block w-full bg-teal-600 hover:bg-teal-500 text-white font-semibold py-3 px-4 rounded-xl transition shadow-lg text-center text-sm">
+                    ☕ Buy on Ko-fi Storefront
+                </a>
+
+                <!-- Gumroad Storefront -->
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" rel="noopener noreferrer" class="block w-full bg-pink-600 hover:bg-pink-500 text-white font-semibold py-3 px-4 rounded-xl transition shadow-lg text-center text-sm">
+                    🛒 Get on Gumroad (`vaultkeeper117`)
+                </a>
+
+                <!-- Public Verification Hub -->
+                <a href="https://handlevault-official.github.io/kofi-files/" target="_blank" rel="noopener noreferrer" class="block w-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium py-2.5 px-4 rounded-xl transition border border-slate-700 text-center">
+                    🛡️ Verify Source &amp; Files (Repo Shield)
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+        &copy; 2026 HandleVault Official. Set-and-Forget Mode Active.
+    </footer>
+
 </body>
 </html>
