@@ -1,5 +1,21 @@
 (function() {
-  // 1. Likhain ang HTML structure ng widget nang dynamic sa pamamagitan ng JS
+  // Listahan ng iyong 6 na promo videos
+  const promoVideos = [
+    "./promo-ads-1.mp4",
+    "./promo-ads-2.mp4",
+    "./promo-ads-3.mp4",
+    "./promo-ads-4.mp4",
+    "./promo-ads-5.mp4",
+    "./promo-ads-6.mp4"
+  ];
+
+  // Kunin ang kasalukuyang index mula sa localStorage para mag-rotate sila sunud-sunod
+  let currentIndex = parseInt(localStorage.getItem('hv_ad_index') || '0', 10);
+  if (currentIndex >= promoVideos.length) currentIndex = 0;
+
+  const currentVideoSrc = promoVideos[currentIndex];
+
+  // Likhain ang widget HTML gamit ang napiling video
   const widgetHTML = `
     <div id="hvPromoBar" hidden style="position:fixed; bottom:14px; right:14px; z-index:99; width:260px; background:var(--card, #121b2e); border:1px solid var(--accent, #2dd4bf); border-radius:12px; padding:10px; box-shadow:0 8px 24px rgba(0,0,0,0.45); font-family:system-ui,sans-serif;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; font-size:11px; color:var(--mute, #93a3c0);">
@@ -7,7 +23,7 @@
         <span id="hvSecLeft">5s</span>
       </div>
       <a href="https://handlevault.gumroad.com" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none;">
-        <video id="hvPromoVid" src="https://YOUR_GITHUB_USERNAME.github.io/handle-vault-assets/promo-ads.mp4" muted playsinline style="width:100%; border-radius:8px; display:block;"></video>
+        <video id="hvPromoVid" src="https://YOUR_GITHUB_USERNAME.github.io/handle-vault-assets/${currentVideoSrc}" muted playsinline style="width:100%; border-radius:8px; display:block;"></video>
         <div style="font-size:11px; color:var(--ink, #e8eefc); margin-top:6px; text-align:center;">
           Break Time: Water, CR, Stretch &rarr;
         </div>
@@ -15,8 +31,10 @@
     </div>
   `;
 
-  // I-inject sa dulo ng body ng app
   document.body.insertAdjacentHTML('beforeend', widgetHTML);
+
+  // I-save ang susunod na index para sa susunod na break time
+  localStorage.setItem('hv_ad_index', (currentIndex + 1) % promoVideos.length);
 
   const BREAK_INTERVAL_MS = 4.5 * 60 * 60 * 1000; // 4.5 hours interval
   const barEl = document.getElementById('hvPromoBar');
