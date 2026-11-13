@@ -1,12 +1,7 @@
 (function() {
   // Listahan ng iyong 6 na promo videos
   const promoVideos = [
-    "./promo-ads-1.mp4",
-    "./promo-ads-2.mp4",
-    "./promo-ads-3.mp4",
-    "./promo-ads-4.mp4",
-    "./promo-ads-5.mp4",
-    "./promo-ads-6.mp4"
+    "./Firefly _Video 1 (Para i-save bilang- promo-ads-1.mp4)__Prompt- Create a clean, sleek, and modern 5-.mp4",
   ];
 
   // Kunin ang kasalukuyang index mula sa localStorage para mag-rotate sila sunud-sunod
