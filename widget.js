@@ -22,9 +22,8 @@
         <span style="font-weight:700; color:var(--accent, #2dd4bf);">HandleVault Suite</span>
         <span id="hvSecLeft">5s</span>
       </div>
-      <a href="https://handlevault.gumroad.com" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none;">
-        <video id="hvPromoVid" src="https://YOUR_GITHUB_USERNAME.github.io/handle-vault-assets/${currentVideoSrc}" muted playsinline style="width:100%; border-radius:8px; display:block;"></video>
-        <div style="font-size:11px; color:var(--ink, #e8eefc); margin-top:6px; text-align:center;">
+       <a href="https://handlevault.gumroad.com" target="_blank" rel="noopener noreferrer" style="display:block; text-decoration:none;">
+       <video id="hvPromoVid" src="https://handlevault-official.github.io/handle-vault-assets/${currentVideoSrc}" muted playsinline style="width:100%; border-radius:8px; display:block;"></video>
           Break Time: Water, CR, Stretch &rarr;
         </div>
       </a>
