@@ -10,4 +10,4 @@ This repository serves as the centralized hosting hub for shared media assets an
 To connect any of the HandleVault apps to this centralized asset hub, simply include the following script before the closing `</body>` tag of your app's `index.html`:
 
 ```html
-<script src="https://YOUR_GITHUB_USERNAME.github.io/handle-vault-assets/widget.js"></script>
+<script src="https://handlevault-official.github.io/crisp-pixel/widget.js"></script>
