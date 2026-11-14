@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HVS Studio Ecosystem Hub — Live Apps & News</title>
+    <title>Crisp Suite — Asset Hub &amp; Verification Shield</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -25,225 +25,107 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between antialiased p-4 sm:p-8">
 
     <!-- Main Container -->
-    <main class="max-w-6xl w-full mx-auto py-8">
+    <main class="max-w-4xl w-full mx-auto py-8">
         
-        <!-- Header Hub Title -->
-        <div class="text-center mb-12">
-            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mb-3">
-                HVS <span class="text-teal-400">Studio</span> Ecosystem Hub
+        <!-- Welcome & Introduction Hero Card -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 text-center shadow-2xl mb-10 relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 text-teal-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                Official Asset Repository &amp; Verification Hub
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                Crisp <span class="text-teal-400">Suite</span> Asset Shield
             </h1>
-            <p class="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
-                Access your live web applications, developer news, and official Gumroad digital asset bundles from a single centralized dashboard.
+            
+            <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
+                Welcome to the official asset repository and file verification portal. Here you can inspect shared release manifests, check file integrity, read studio updates, and access our secure digital storefronts.
             </p>
+
+            <!-- Quick Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-3 max-w-md mx-auto">
+                <a href="https://ko-fi.com/handlevaultofficial" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold py-2.5 px-5 rounded-xl transition shadow-lg text-sm">
+                    ☕ Ko-fi Storefront
+                </a>
+                <a href="https://vaultkeeper117.gumroad.com" target="_blank" rel="noopener noreferrer" class="bg-pink-600 hover:bg-pink-500 text-white font-semibold py-2.5 px-5 rounded-xl transition shadow-lg text-sm">
+                    🛒 Gumroad Store (`vaultkeeper117`)
+                </a>
+                <a href="https://github.com/handlevault-official/kofi-files/discussions" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-5 rounded-xl transition shadow-lg text-sm">
+                    💬 Comments &amp; Ratings
+                </a>
+            </div>
         </div>
 
-        <!-- 📰 SECTION 1: News & Updates (Purong Balita at Changelog) -->
-        <div class="mb-14 bg-slate-900/40 border border-slate-800/80 rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center justify-between mb-4 border-b border-slate-800 pb-3">
-                <h2 class="text-lg font-bold text-amber-400 flex items-center gap-2">
-                    📰 Studio News &amp; Updates
+        <!-- 📰 SECTION: Studio News & Updates / Changelog -->
+        <div class="mb-10 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                <h2 class="text-base sm:text-lg font-bold text-amber-400 flex items-center gap-2">
+                    📰 Studio News &amp; Updates Bulletin
                 </h2>
-                <span class="text-xs text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-full">Changelog v2.4</span>
+                <span class="text-xs text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-full font-mono">Changelog v3.0</span>
             </div>
             
-            <div class="space-y-4">
+            <div class="space-y-6">
                 <!-- News Item 1 -->
                 <div class="border-l-2 border-amber-400 pl-4 py-1">
                     <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                        <span class="font-semibold text-amber-400 uppercase tracking-wider">Dashboard Update</span>
-                        <span>Today</span>
+                        <span class="font-semibold text-amber-400 uppercase tracking-wider">Ecosystem Milestone</span>
+                        <span>Latest Update</span>
                     </div>
-                    <h3 class="text-sm font-semibold text-white">Centralized Hub Structure Finalized</h3>
-                    <p class="text-xs text-slate-400 mt-1">Successfully separated Live Web Apps from Digital Assets and added a dedicated News &amp; Updates bulletin board.</p>
+                    <h3 class="text-sm font-semibold text-white">Full Rebrand to Crisp Suite Completed</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Successfully migrated all repository documentation, floating UI widgets, licensing headers, and verification pages to the unified Crisp Suite standard.</p>
                 </div>
 
                 <!-- News Item 2 -->
-                <div class="border-l-2 border-slate-700 pl-4 py-1">
+                <div class="border-l-2 border-teal-500 pl-4 py-1">
                     <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                        <span class="font-semibold text-slate-300 uppercase tracking-wider">Apps Deployment</span>
+                        <span class="font-semibold text-teal-400 uppercase tracking-wider">Community Integration</span>
                         <span>Recent</span>
                     </div>
-                    <h3 class="text-sm font-semibold text-white">Tailwind CSS Rolled Out Across All Repositories</h3>
-                    <p class="text-xs text-slate-400 mt-1">All 6 core web applications now fully support standard Tailwind CDN rendering, eliminating 404 layout errors.</p>
+                    <h3 class="text-sm font-semibold text-white">Interactive Comments &amp; Ratings Enabled</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Integrated Giscus-powered comment sections and feedback portals directly across documentation and asset verification hubs for seamless buyer interaction.</p>
+                </div>
+
+                <!-- News Item 3 -->
+                <div class="border-l-2 border-slate-700 pl-4 py-1">
+                    <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
+                        <span class="font-semibold text-slate-300 uppercase tracking-wider">Infrastructure</span>
+                        <span>Active</span>
+                    </div>
+                    <h3 class="text-sm font-semibold text-white">Set-and-Forget Static Hosting Active</h3>
+                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">All core apps and asset manifests are hosted on secure GitHub Pages with zero maintenance overhead and lightning-fast zero-build Tailwind rendering.</p>
                 </div>
             </div>
         </div>
 
-        <!-- 🚀 SECTION 2: Core Live Web Apps -->
-        <div class="mb-14">
-            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-3">
-                <h2 class="text-lg font-bold text-teal-400 flex items-center gap-2">
-                    🚀 Core Live Web Apps
+        <!-- 🔒 SECTION: Repository Integrity & File Manifest -->
+        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
+            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
+                <h2 class="text-base sm:text-lg font-bold text-teal-400 flex items-center gap-2">
+                    🛡️ Repository File Manifest &amp; Integrity
                 </h2>
-                <span class="text-xs text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-full">6 Applications Active</span>
+                <span class="text-xs text-teal-400 bg-teal-950 border border-teal-800 px-3 py-1 rounded-full font-medium">Secure &amp; Verified</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Pixel Art Studio -->
-                <a href="https://handlevault-official.github.io/hvs-crisp-pixel-studio/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-teal-500/50 hover:-translate-y-1 transition shadow-xl group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-950 border border-teal-800 flex items-center justify-center text-teal-400 text-xl mb-4">🎨</div>
-                        <h3 class="text-lg font-semibold text-white group-hover:text-teal-400 transition">Pixel Art Studio</h3>
-                        <p class="mt-2 text-xs text-slate-400">Create, edit, and export custom pixel art projects directly in your browser.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs">
-                        <span class="text-teal-400 font-semibold">Launch App &rarr;</span>
-                        <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live</span>
-                    </div>
-                </a>
+            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
+                This repository acts as the central source of truth for file signatures, shared widgets, and release manifests. Buyers can inspect our public directory to verify authenticity before downloading or purchasing digital bundles.
+            </p>
 
-                <!-- Moonlit Beads Blueprint -->
-                <a href="https://handlevault-official.github.io/hvs-crisp-moonlit-beads-blueprint-studio/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 hover:-translate-y-1 transition shadow-xl group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-purple-950 border border-purple-800 flex items-center justify-center text-purple-400 text-xl mb-4">💎</div>
-                        <h3 class="text-lg font-semibold text-white group-hover:text-purple-400 transition">Moonlit Beads Blueprint</h3>
-                        <p class="mt-2 text-xs text-slate-400">Design intricate beadwork patterns and custom blueprints effortlessly.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs">
-                        <span class="text-purple-400 font-semibold">Launch App &rarr;</span>
-                        <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live</span>
-                    </div>
-                </a>
-
-                <!-- Resume & CV Studio -->
-                <a href="https://handlevault-official.github.io/hvs-crisp-resume-CV-studio/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 hover:-translate-y-1 transition shadow-xl group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-amber-950 border border-amber-800 flex items-center justify-center text-amber-400 text-xl mb-4">📄</div>
-                        <h3 class="text-lg font-semibold text-white group-hover:text-amber-400 transition">Resume & CV Studio</h3>
-                        <p class="mt-2 text-xs text-slate-400">Build professional, crisp resumes and career portfolios instantly.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs">
-                        <span class="text-amber-400 font-semibold">Launch App &rarr;</span>
-                        <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live</span>
-                    </div>
-                </a>
-
-                <!-- Invoice Studio -->
-                <a href="https://handlevault-official.github.io/hvs-crisp-invoice-studio/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 hover:-translate-y-1 transition shadow-xl group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-emerald-950 border border-emerald-800 flex items-center justify-center text-emerald-400 text-xl mb-4">🧾</div>
-                        <h3 class="text-lg font-semibold text-white group-hover:text-emerald-400 transition">Invoice Studio</h3>
-                        <p class="mt-2 text-xs text-slate-400">Generate clean client invoices and manage billing profiles securely.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs">
-                        <span class="text-emerald-400 font-semibold">Launch App &rarr;</span>
-                        <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live</span>
-                    </div>
-                </a>
-
-                <!-- GitVoice Clinical Dashboard -->
-                <a href="https://handlevault-official.github.io/gitvoice-clinical-dashboard/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 hover:-translate-y-1 transition shadow-xl group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-indigo-950 border border-indigo-800 flex items-center justify-center text-indigo-400 text-xl mb-4">🩺</div>
-                        <h3 class="text-lg font-semibold text-white group-hover:text-indigo-400 transition">GitVoice Clinical Dashboard</h3>
-                        <p class="mt-2 text-xs text-slate-400">Streamline clinical health monitoring workflows and patient metrics.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs">
-                        <span class="text-indigo-400 font-semibold">Launch App &rarr;</span>
-                        <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live</span>
-                    </div>
-                </a>
-
-                <!-- Kusina AI -->
-                <a href="https://handlevault-official.github.io/kusina-ai/" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-rose-500/50 hover:-translate-y-1 transition shadow-xl group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-rose-950 border border-rose-800 flex items-center justify-center text-rose-400 text-xl mb-4">🍳</div>
-                        <h3 class="text-lg font-semibold text-white group-hover:text-rose-400 transition">Kusina AI</h3>
-                        <p class="mt-2 text-xs text-slate-400">Smart culinary assistant and recipe generator for everyday cooking.</p>
-                    </div>
-                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex justify-between items-center text-xs">
-                        <span class="text-rose-400 font-semibold">Launch App &rarr;</span>
-                        <span class="bg-slate-800 text-slate-300 px-2 py-0.5 rounded">Live</span>
-                    </div>
-                </a>
-
-            </div>
-        </div>
-
-        <!-- 💎 SECTION 3: Gumroad Digital Assets & Store Hub -->
-        <div class="mb-12">
-            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-3">
-                <h2 class="text-lg font-bold text-pink-400 flex items-center gap-2">
-                    💎 Gumroad Digital Assets &amp; Bundles
-                </h2>
-                <a href="https://vaultkeeper117.gumroad.com" target="_blank" rel="noopener noreferrer" class="text-xs text-pink-400 hover:underline font-semibold">Visit Main Store &rarr;</a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                
-                <!-- Asset 1 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Pass</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">HVS Studio Hub Pass</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 2 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/xwzxwp" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Template</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">Universal Product Template</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 3 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/copzec" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-emerald-400 uppercase tracking-widest bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-900">Freebie</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">Free WebM Sample Alert</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 4 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/dkmedq" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Alert</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">Standard MP4 Animated Alert</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 5 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/lhhxej" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Art</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">Pixel Art Ninja Cat &amp; Avatars</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 6 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/fanvlu" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Alert</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">WebM Animated Alert File</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 7 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/aihkjh" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Alert</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">YouTube-MP4 Animated Alert</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
-                <!-- Asset 8 -->
-                <a href="https://vaultkeeper117.gumroad.com/l/echfl" target="_blank" rel="noopener noreferrer" class="bg-slate-900/60 border border-slate-800 rounded-xl p-4 hover:border-pink-500/50 transition flex flex-col justify-between group">
-                    <div>
-                        <span class="text-[10px] font-semibold text-pink-400 uppercase tracking-widest bg-pink-950/50 px-2 py-0.5 rounded border border-pink-900">Wallpaper</span>
-                        <h3 class="text-xs font-semibold text-white group-hover:text-pink-300 mt-2">Calm Aesthetic Wallpapers</h3>
-                    </div>
-                    <div class="mt-4 pt-2 border-t border-slate-800 text-xs text-pink-400 font-medium">Get on Gumroad &rarr;</div>
-                </a>
-
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
+                    <div class="text-teal-400 font-bold text-sm mb-1">widget.js / shield.js</div>
+                    <p class="text-xs text-slate-400">Floating interaction widgets deployed across web apps.</p>
+                </div>
+                <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
+                    <div class="text-teal-400 font-bold text-sm mb-1">LICENSE (MIT)</div>
+                    <p class="text-xs text-slate-400">Official open-source and commercial terms under Crisp Suite.</p>
+                </div>
+                <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
+                    <div class="text-teal-400 font-bold text-sm mb-1">README.md</div>
+                    <p class="text-xs text-slate-400">Central documentation, verification guidelines, and changelogs.</p>
+                </div>
             </div>
         </div>
 
@@ -251,9 +133,8 @@
 
     <!-- Footer -->
     <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-        &copy; 2026 HVS Studio / HandleVault Official. All rights reserved.
+        &copy; 2026 Crisp Suite / HandleVault Official. All rights reserved.
     </footer>
 
 </body>
-                    </html>
-    
+</html>
