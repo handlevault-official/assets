@@ -1,139 +1,530 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crisp Suite — Asset Hub &amp; Verification Shield</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                400: '#2dd4bf',
-                500: '#14b8a6',
-                600: '#0d9488',
-              }
-            }
-          }
+    <title>Crisp Suite / HandleVault Official | Creator & Productivity Suite</title>
+    <!-- Favicon Set-and-Forget (Inline SVG Shield/Vault Icon) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%2338bdf8%22><path d=%22M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z%22/></svg>">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --accent-color: #38bdf8;
+            --text-color: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --btn-gumroad: #ff90e8;
+            --btn-github: #2ea043;
+            --btn-replit: #f26207;
+            --btn-ai: #8b5cf6;
+            --btn-kofi: #ff5e5b;
+            --btn-free: #34d399;
         }
-      }
-    </script>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .ecosystem-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0 30px;
+            padding: 0 20px;
+        }
+        .nav-link {
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+        }
+        .nav-github { background-color: var(--btn-github); }
+        .nav-replit { background-color: var(--btn-replit); }
+        .nav-ai { background-color: var(--btn-ai); }
+        .nav-kofi { background-color: var(--btn-kofi); }
+        .nav-link:hover { opacity: 0.85; }
+
+        .container {
+            max-width: 1100px;
+            width: 90%;
+            margin: 0 auto 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-color);
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: var(--text-color);
+        }
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            flex: 1;
+            min-width: 75px;
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #0f172a;
+            padding: 8px 4px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-align: center;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        .btn-buy { background-color: var(--btn-gumroad); color: #0f172a; }
+        .btn-free { background-color: var(--btn-free); color: #0f172a; }
+        .btn-repo { background-color: #2ea043; color: #ffffff; }
+        .btn-app { background-color: #38bdf8; color: #0f172a; }
+        .btn-kofi { background-color: var(--btn-kofi); color: #ffffff; }
+
+        /* Flashing / Scrolling Text Ads & Updates Bar */
+        .flash-ticker-bar {
+            max-width: 1100px;
+            width: 90%;
+            margin: 0 auto 25px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
+        }
+        .flash-badge {
+            background-color: var(--accent-color);
+            color: #0f172a;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-right: 12px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .ticker-wrap {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: tickerScroll 28s linear infinite;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .ticker-content span {
+            margin-right: 40px;
+        }
+        .ticker-content a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .ticker-content a:hover {
+            text-decoration: underline;
+        }
+        @keyframes tickerScroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Bottom Community Hub & Text Ads Section Styles */
+        .bottom-hub {
+            max-width: 1100px;
+            width: 90%;
+            margin: 0 auto 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+        .hub-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .hub-box h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .text-ad {
+            background: rgba(56, 189, 248, 0.05);
+            border-left: 3px solid var(--accent-color);
+            padding: 8px 12px;
+            margin-bottom: 10px;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.83rem;
+            color: var(--text-secondary);
+        }
+        .text-ad a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .text-ad a:hover {
+            text-decoration: underline;
+        }
+        .hub-box ul {
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+            padding-left: 18px;
+            font-size: 0.85rem;
+        }
+        .hub-box li {
+            margin-bottom: 6px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between antialiased p-4 sm:p-8">
+<body>
 
-    <!-- Main Container -->
-    <main class="max-w-4xl w-full mx-auto py-8">
+    <header>
+        <h1>Crisp Suite / HandleVault Official</h1>
+        <p>Your centralized ecosystem for professional productivity tools, creator assets, and automated license verification suites.</p>
+    </header>
+
+    <!-- Ecosystem Developer, Funding & Support Navigation -->
+    <div class="ecosystem-nav">
+        <a href="https://ko-fi.com/handlevaultofficial" target="_blank" class="nav-link nav-kofi">☕ Support Us on Ko-fi</a>
+        <a href="https://github.com/sponsors/handlevault-official" target="_blank" class="nav-link nav-github">💚 GitHub Sponsors</a>
+        <a href="https://replit.com/@handlevault" target="_blank" class="nav-link nav-replit">⚡ Replit Workspace</a>
+        <a href="https://aistudio.google.com" target="_blank" class="nav-link nav-ai">✨ Google AI Studio</a>
+    </div>
+
+    <div class="container">
+        <!-- 1. HandleVault Studio Hub (All-Access Pass) -->
+        <div class="card" style="border-color: var(--btn-gumroad);">
+            <div>
+                <h3>1. Crisp Suite / HandleVault Studio Hub (All-Access Pass)</h3>
+                <p>Unlock the ultimate master bundle containing access to all productivity applications and design suites.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Pass</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 2. Pixel Art Studio -->
+        <div class="card">
+            <div>
+                <h3>2. Pixel Art Studio</h3>
+                <p>Create stunning retro pixel art, game assets, and digital illustrations with our crisp pixel scaling canvas.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/xwzxwp" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/crisp-pixel/" target="_blank" class="btn btn-app">Launch</a>
+                <a href="https://github.com/handlevault-official/crisp-pixel" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 3. Moonlit Beads Blueprint -->
+        <div class="card">
+            <div>
+                <h3>3. Moonlit Beads Blueprint</h3>
+                <p>Dedicated creative design and pattern utility tool tailored specifically for crafters and beadwork artists.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/crisp-moonlit-beads-blueprint-studio/" target="_blank" class="btn btn-app">Launch</a>
+                <a href="https://github.com/handlevault-official/crisp-moonlit-beads-blueprint-studio" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 4. Universal Product Template (Pixel Art Pack) -->
+        <div class="card">
+            <div>
+                <h3>4. Universal Pixel Art Pack Template</h3>
+                <p>High-quality adaptable assets and templates designed for retro games, creators, and digital art projects.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/xwzxwp" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 5. FREE WEB-M SAMPLE ALERT -->
+        <div class="card">
+            <div>
+                <h3>5. 🎁 FREE WEB-M SAMPLE ALERT (RESUB #3)</h3>
+                <p>Grab your free web-m sample animated stream alert to test out your broadcast layout setup.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/copzec" target="_blank" class="btn btn-free">Get Free</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 6. Standard MP4 Format Animated Alert -->
+        <div class="card">
+            <div>
+                <h3>6. Standard MP4 Format Animated Alert</h3>
+                <p>Smooth, professional animated stream alerts optimized for broad compatibility across streaming platforms.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/dkmedq" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 7. Pixel Art Ninja Cat -->
+        <div class="card">
+            <div>
+                <h3>7. Pixel Art Ninja Cat [Static & Avatars]</h3>
+                <p>Detailed static pixel art graphics and 512px Discord avatars featuring a stealthy ninja cat theme.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/lhhxej" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 8. WebM Animated Alert File -->
+        <div class="card">
+            <div>
+                <h3>8. WebM Animated Alert File</h3>
+                <p>Transparent background WebM animated alerts built explicitly for seamless overlay integration in OBS/Streamlabs.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/fanvlu" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 9. YouTube-MP4 Animated Alert File -->
+        <div class="card">
+            <div>
+                <h3>9. YouTube-MP4 Animated Alert File</h3>
+                <p>Custom-tailored animated stream alerts formatted perfectly for YouTube live broadcasting setups.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/aihkjh" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 10. Calm Aesthetic Wallpaper Bundle -->
+        <div class="card">
+            <div>
+                <h3>10. 📱 Calm Aesthetic Wallpaper Bundle</h3>
+                <p>Gumroad-ready soothing and minimal aesthetic wallpapers to elevate your desktop or mobile home screen.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/echfl" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://github.com/handlevault-official/kofi-files" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 11. Resume & CV Studio App Hub -->
+        <div class="card">
+            <div>
+                <h3>11. Resume & CV Studio</h3>
+                <p>Build ATS-optimized resumes and professional digital portfolios to stand out to recruiters instantly.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/crisp-resume-CV-studio/" target="_blank" class="btn btn-app">Launch</a>
+                <a href="https://github.com/handlevault-official/crisp-resume-CV-studio" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 12. Invoice Studio App Hub -->
+        <div class="card">
+            <div>
+                <h3>12. Invoice Studio</h3>
+                <p>Clean, professional, and fast invoicing and billing tool built specifically for freelancers and small businesses.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/crisp-invoice-studio" target="_blank" class="btn btn-app">Launch</a>
+                <a href="https://github.com/handlevault-official/crisp-invoice-studio" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 13. GitVoice Clinical Dashboard Hub -->
+        <div class="card">
+            <div>
+                <h3>13. GitVoice Clinical Dashboard</h3>
+                <p>AI-powered medical and professional voice-to-text assistant for quick and accurate transcriptions.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/gitvoice-clinical-dashboard/" target="_blank" class="btn btn-app">Launch</a>
+                <a href="https://github.com/handlevault-official/gitvoice-clinical-dashboard" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+
+        <!-- 14. HandleVault Official Ko-fi Support Hub -->
+        <div class="card" style="border-color: var(--btn-kofi);">
+            <div>
+                <h3>14. ☕ HandleVault Ko-fi Support Hub</h3>
+                <p>Support our ongoing development, open-source repositories, and creator tools directly via Ko-fi.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://ko-fi.com/handlevaultofficial" target="_blank" class="btn btn-kofi" style="width: 100%;">Support on Ko-fi</a>
+            </div>
+        </div>
         
-        <!-- Welcome & Introduction Hero Card -->
-        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-10 text-center shadow-2xl mb-10 relative overflow-hidden">
-            <div class="absolute -top-24 -right-24 w-48 h-48 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 text-teal-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                Official Asset Repository &amp; Verification Hub
+        <!-- 15. Kusina AI - Viral Food Caption Generator -->
+        <div class="card" style="border-color: var(--accent-color);">
+            <div>
+                <h3>15. 🍔 Kusina AI - Viral Food Caption Generator</h3>
+                <p>AI-powered web app designed for food business owners and online sellers to generate high-converting Taglish captions and TikTok hooks.</p>
             </div>
-
-            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-                Crisp <span class="text-teal-400">Suite</span> Asset Shield
-            </h1>
-            
-            <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-6 leading-relaxed">
-                Welcome to the official asset repository and file verification portal. Here you can inspect shared release manifests, check file integrity, read studio updates, and access our secure digital storefronts.
-            </p>
-
-            <!-- Quick Action Buttons -->
-            <div class="flex flex-wrap items-center justify-center gap-3 max-w-md mx-auto">
-                <a href="https://ko-fi.com/handlevaultofficial" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold py-2.5 px-5 rounded-xl transition shadow-lg text-sm">
-                    ☕ Ko-fi Storefront
-                </a>
-                <a href="https://vaultkeeper117.gumroad.com" target="_blank" rel="noopener noreferrer" class="bg-pink-600 hover:bg-pink-500 text-white font-semibold py-2.5 px-5 rounded-xl transition shadow-lg text-sm">
-                    🛒 Gumroad Store (`vaultkeeper117`)
-                </a>
-                <a href="https://github.com/handlevault-official/kofi-files/discussions" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-5 rounded-xl transition shadow-lg text-sm">
-                    💬 Comments &amp; Ratings
-                </a>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/kusina-ai/" target="_blank" class="btn btn-app">Launch</a>
+                <a href="https://github.com/handlevault-official/kusina-ai" target="_blank" class="btn btn-repo">Repo</a>
             </div>
         </div>
 
-        <!-- 📰 SECTION: Studio News & Updates / Changelog -->
-        <div class="mb-10 bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
-                <h2 class="text-base sm:text-lg font-bold text-amber-400 flex items-center gap-2">
-                    📰 Studio News &amp; Updates Bulletin
-                </h2>
-                <span class="text-xs text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1 rounded-full font-mono">Changelog v3.0</span>
+        <!-- 16. Crisp Creator Studio -->
+        <div class="card" style="border-color: #ef4444;">
+            <div>
+                <h3>16. 🎬 Crisp Creator Studio</h3>
+                <p>All-in-one YouTube & creator packaging studio to generate high-CTR titles, thumbnail concepts, 15-second retention hooks, and SEO scripts in English & Taglish.</p>
             </div>
-            
-            <div class="space-y-6">
-                <!-- News Item 1 -->
-                <div class="border-l-2 border-amber-400 pl-4 py-1">
-                    <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                        <span class="font-semibold text-amber-400 uppercase tracking-wider">Ecosystem Milestone</span>
-                        <span>Latest Update</span>
-                    </div>
-                    <h3 class="text-sm font-semibold text-white">Full Rebrand to Crisp Suite Completed</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Successfully migrated all repository documentation, floating UI widgets, licensing headers, and verification pages to the unified Crisp Suite standard.</p>
-                </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/crisp-creator-studio/" target="_blank" class="btn btn-app" style="background-color: #ef4444; color: white;">Launch</a>
+                <a href="https://github.com/handlevault-official/crisp-creator-studio" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+    </div> <!-- Katapusan ng .container grid -->
 
-                <!-- News Item 2 -->
-                <div class="border-l-2 border-teal-500 pl-4 py-1">
-                    <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                        <span class="font-semibold text-teal-400 uppercase tracking-wider">Community Integration</span>
-                        <span>Recent</span>
-                    </div>
-                    <h3 class="text-sm font-semibold text-white">Interactive Comments &amp; Ratings Enabled</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">Integrated Giscus-powered comment sections and feedback portals directly across documentation and asset verification hubs for seamless buyer interaction.</p>
-                </div>
+    <!-- 16. Crisp Creator Studio -->
+        <div class="card" style="border-color: #ef4444;">
+            <div>
+                <h3>16. 🎬 Crisp Creator Studio</h3>
+                <p>All-in-one YouTube & creator packaging studio to generate high-CTR titles, thumbnail concepts, 15-second retention hooks, and SEO scripts in English & Taglish.</p>
+            </div>
+            <div class="btn-group">
+                <a href="https://vaultkeeper117.gumroad.com/l/ztzxpg" target="_blank" class="btn btn-buy">Buy Code</a>
+                <a href="https://handlevault-official.github.io/crisp-creator-studio/" target="_blank" class="btn btn-app" style="background-color: #ef4444; color: white;">Launch</a>
+                <a href="https://github.com/handlevault-official/crisp-creator-studio" target="_blank" class="btn btn-repo">Repo</a>
+            </div>
+        </div>
+    </div> <!-- Katapusan ng .container grid -->
 
-                <!-- News Item 3 -->
-                <div class="border-l-2 border-slate-700 pl-4 py-1">
-                    <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
-                        <span class="font-semibold text-slate-300 uppercase tracking-wider">Infrastructure</span>
-                        <span>Active</span>
-                    </div>
-                    <h3 class="text-sm font-semibold text-white">Set-and-Forget Static Hosting Active</h3>
-                    <p class="text-xs text-slate-400 mt-1 leading-relaxed">All core apps and asset manifests are hosted on secure GitHub Pages with zero maintenance overhead and lightning-fast zero-build Tailwind rendering.</p>
-                </div>
+    <!-- Live Flashing Text Ads & Updates Ticker Bar -->
+    <div class="flash-ticker-bar">
+        <div class="flash-badge">📢 FLASH ALERT</div>
+        <div class="ticker-wrap">
+            <div class="ticker-content">
+                <span>☕ <strong>Break Time Alert:</strong> Rest your eyes and stretch every 4.5 hours!</span>
+                <span>💡 <strong>Text Ad:</strong> Grab your all-access pass at <a href="https://vaultkeeper117.gumroad.com" target="_blank">HandleVault Store</a></span>
+                <span>🚀 <strong>System Update:</strong> All GitHub & Replit repos synchronized successfully!</span>
+                <span>💬 <strong>Tip:</strong> Open issues or suggestions via our GitHub support channels.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- All-in-One Bottom Hub: Text Ads, News, Updates, Comments & Suggestions -->
+    <div class="bottom-hub">
+        <!-- Text Ads Box -->
+        <div class="hub-box">
+            <h3>📢 Sponsored Text Ads</h3>
+            <div class="text-ad">
+                <strong>Featured Tool:</strong> Boost your productivity today with <a href="https://vaultkeeper117.gumroad.com" target="_blank">HandleVault Passes & Bundles</a>. Get instant access!
+            </div>
+            <div class="text-ad">
+                <strong>Support Open Source:</strong> Sponsor our ongoing development on <a href="https://github.com/sponsors/handlevault-official" target="_blank">GitHub Sponsors</a>.
             </div>
         </div>
 
-        <!-- 🔒 SECTION: Repository Integrity & File Manifest -->
-        <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 sm:p-8">
-            <div class="flex items-center justify-between mb-6 border-b border-slate-800 pb-4">
-                <h2 class="text-base sm:text-lg font-bold text-teal-400 flex items-center gap-2">
-                    🛡️ Repository File Manifest &amp; Integrity
-                </h2>
-                <span class="text-xs text-teal-400 bg-teal-950 border border-teal-800 px-3 py-1 rounded-full font-medium">Secure &amp; Verified</span>
-            </div>
-
-            <p class="text-xs sm:text-sm text-slate-300 mb-6 leading-relaxed">
-                This repository acts as the central source of truth for file signatures, shared widgets, and release manifests. Buyers can inspect our public directory to verify authenticity before downloading or purchasing digital bundles.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
-                    <div class="text-teal-400 font-bold text-sm mb-1">widget.js / shield.js</div>
-                    <p class="text-xs text-slate-400">Floating interaction widgets deployed across web apps.</p>
-                </div>
-                <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
-                    <div class="text-teal-400 font-bold text-sm mb-1">LICENSE (MIT)</div>
-                    <p class="text-xs text-slate-400">Official open-source and commercial terms under Crisp Suite.</p>
-                </div>
-                <div class="bg-slate-950 border border-slate-800 p-4 rounded-xl">
-                    <div class="text-teal-400 font-bold text-sm mb-1">README.md</div>
-                    <p class="text-xs text-slate-400">Central documentation, verification guidelines, and changelogs.</p>
-                </div>
-            </div>
+        <!-- News & Updates Box -->
+        <div class="hub-box">
+            <h3>🚀 News & Updates</h3>
+            <ul>
+                <li><strong>v2.4 Release:</strong> Added Crisp Creator Studio & Kusina AI to the ecosystem suite.</li>
+                <li><strong>Repository Sync:</strong> All open-source tools are updated with latest security patches.</li>
+                <li><strong>Ko-fi Milestone:</strong> Special thanks to all supporters backing our creative utilities!</li>
+            </ul>
         </div>
 
-    </main>
+        <!-- Comments, Suggestions & Info Box -->
+        <div class="hub-box">
+            <h3>💬 Comments, Suggestions & Info</h3>
+            <ul>
+                <li><strong>Feedback:</strong> Have tool suggestions or bug reports? Open an issue on our GitHub repos.</li>
+                <li><strong>Community:</strong> Join discussions and share your setups via our support channels.</li>
+                <li><strong>Other Info:</strong> All web apps are built for high performance and seamless creator workflows.</li>
+            </ul>
+        </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-        &copy; 2026 Crisp Suite / HandleVault Official. All rights reserved.
+    <footer>
+        <p>&copy; 2026 Crisp Suite / HandleVault Official. All rights reserved. Powered by Ko-fi, GitHub, Replit & Google AI Studio.</p>
     </footer>
 
 </body>
